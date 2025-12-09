@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, z, y;
+
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter z: ";
+    cin >> z;
+
+    if (x <= 1) {
+        y = (6 * z * z - 5) / 3.0;
+    } else {
+        y = (5 * z * z - 4) / 12.0;
+    }
+
+    cout << "Y = " << y << endl;
+
+    return 0;
+}
+//------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, y;
+
+    cout << "Enter x: ";
+    cin >> x;
+    cout << "Enter y: ";
+    cin >> y;
+
+    bool inside = (x >= 0 && x <= 2 && y >= 0 && y <= x);
+
+    if (inside)
+        cout << "The point is inside the shaded region.\n";
+    else
+        cout << "The point is outside the shaded region.\n";
+
+    return 0;
+}
