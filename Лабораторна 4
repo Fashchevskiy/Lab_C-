@@ -1,0 +1,115 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int value;
+    bool answer = false;
+
+    cout << "Enter a value: ";
+    cin >> value;
+
+    if (value >= 0 && value < 10) {
+        answer = true;
+    } 
+    else if (value * 2 < 20 && value - 2 > -2) {
+        answer = true;
+    } 
+    else if (value - 1 > 1 && value / 2 < 10) {
+        answer = true;
+    } 
+    else if (value == 111) {
+        answer = true;
+    } 
+    else {
+        answer = false;
+    }
+
+  cout << (answer ? "THAT'S TRUE :)" : "THAT'S NOT TRUE :(") << endl;
+return 0;
+
+    
+}
+
+// ------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+   
+    float a = 2.3;
+    float b = 2.3;
+    float c = 2.123456;
+    float d = 2.123456;
+    float e = 2.123456;
+
+    
+    cout << a << endl;
+
+    
+    cout << (int)(b * 100) / 100.0 << "0" << endl; // +0 я додав вручну 
+
+    
+    cout << c << endl;
+
+    
+    d = (int)(d * 100) / 100.0;
+    cout << d << endl;
+
+ 
+    cout << (int)e << endl;
+
+    return 0;
+}
+// ------------------------------------------------------------------------------------------------------------------------------------
+
+  #include <iostream>
+#include <cmath>  
+using namespace std;
+
+int main() {
+    int x, y;
+    float a, b;
+    const float EPSILON = 0.000001;
+
+  
+    cout << "Enter first number: ";
+    cin >> x;
+    cout << "Enter second number: ";
+    cin >> y;
+
+
+    a = 1.0f / x;
+    b = 1.0f / y;
+
+   
+  if ((a - b < EPSILON) && (b - a < EPSILON))
+    cout << "Results are equal";
+else
+    cout << "Results are not equal";
+
+
+    return 0;
+}
+//---------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+
+    cout << "Enter 4 numbers for IP: ";
+    cin >> a >> b >> c >> d;
+
+   
+    if ((a < 1 || a > 255) ||
+        (b < 1 || b > 255) ||
+        (c < 1 || c > 255) ||
+        (d < 1 || d > 255)) {
+        cout << "Invalid IP number" << endl;
+        return 0;
+    }
+
+    cout << a << "." << b << "." << c << "." << d << endl;
+
+    return 0;
+}
