@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int number;
+    cout << "Enter a natural number: ";
+    cin >> number;
+
+    if (number <= 0) {
+        cout << "Number must be positive!" << endl;
+        return 0;
+    }
+
+    int steps = 0;
+
+    while (number != 1) {
+        cout << number << " "; 
+        if (number % 2 == 0) {       
+            number = number / 2;
+        } else {                
+            number = 3 * number + 1;
+        }
+
+        steps++;
+    }
+
+    cout << number << endl; 
+    cout << "steps = " << steps << endl;
+
+    return 0;
+}
+//---------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main(void) {
+    double pi4 = 0.0;  
+    long n;              
+    cout << "Number of iterations? ";
+    cin >> n;
+
+  
+    for (long i = 0; i < n; i++) {
+        
+        if (i % 2 == 0)
+            pi4 += 1.0 / (2 * i + 1);
+        else
+            pi4 -= 1.0 / (2 * i + 1);
+    }
+
+    cout.precision(20);
+    cout << "Pi = " << (pi4 * 4.0) << endl;
+    return 0;
+}
+//---------------------------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    const int maxSize = 50; 
+
+    
+    cout << "Enter square size (>1): ";
+    cin >> n;
+
+   
+    if (n <= 1) {
+        cout << "Size must be greater than 1" << endl;
+        return 0;
+    }
+    if (n > maxSize) {
+        cout << "Sorry, the side size is too big" << endl;
+        return 0;
+    }
+
+  
+    cout << '+';
+    for (int i = 0; i < n; i++)
+        cout << '-';
+    cout << '+' << endl;
+
+   
+    for (int i = 0; i < n; i++) {
+        cout << '|';
+        for (int j = 0; j < n; j++)
+            cout << ' ';
+        cout << '|' << endl;
+    }
+
+   
+    cout << '+';
+    for (int i = 0; i < n; i++)
+        cout << '-';
+    cout << '+' << endl;
+
+    return 0;
+}
