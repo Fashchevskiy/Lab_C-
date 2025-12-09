@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int code;
+    cout << "Enter the constellation code (0-4): ";
+    cin >> code;
+
+    switch(code) {
+        case 0:
+            cout << "Constellation: Orion\n";
+            cout << "Number of stars: 7\n";
+            break;
+        case 1:
+            cout << "Constellation: Canis Major\n";
+            cout << "Number of stars: 9\n";
+            break;
+        case 2:
+            cout << "Constellation: Ursa Minor\n";
+            cout << "Number of stars: 7\n";
+            break;
+        case 3:
+            cout << "Constellation: Leo\n";
+            cout << "Number of stars: 6\n";
+            break;
+        case 4:
+            cout << "Constellation: Taurus\n";
+            cout << "Number of stars: 8\n";
+            break;
+        default:
+            cout << "Invalid constellation code\n";
+    }
+
+    return 0;
+}
+
+// ----------------------------------------------------------------------------------------------------------------
+ #include <iostream>
+using namespace std;
+int main()
+{
+ int N;
+ cout<<"Enter a three-digit number: ";
+ cin>>N;
+ int a = N / 100;
+ int b = (N / 10) % 10;
+ int c = N % 10;
+ int product = 1;
+ bool hasEven = false;
+ if (a % 2 == 0) {
+     product *= a; hasEven = true; 
+     }
+    if (b % 2 == 0) { 
+        product *= b; hasEven = true;
+        }
+    if (c % 2 == 0) {
+        product *= c; hasEven = true;
+        }
+        if (hasEven){
+            cout<<"Product of even numbers = "<< product <<"\n";
+            }else{
+                cout <<"There are no even numbers" <<"\n";
+                }
+                return 0;
+}
