@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cout << "Enter a natural number N: ";
+    cin >> N;
+
+    int sum = 0;
+    int temp = N; 
+    do {
+        int digit = temp % 10;
+        if (digit > 5) {
+            sum += digit;
+        }
+        temp = temp / 10;
+    } while (temp > 0);
+
+    cout << "Sum of digits greater than 5 = " << sum << endl;
+
+    return 0;
+}
