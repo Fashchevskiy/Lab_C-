@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+int main() {
+    Date time;
+    int addMinutes;
+    cin >> time.hours >> time.minutes >> addMinutes;
+
+    int totalMinutes = time.hours * 60 + time.minutes + addMinutes;
+    totalMinutes %= 1440;
+
+    time.hours = totalMinutes / 60;
+    time.minutes = totalMinutes % 60;
+
+    cout << time.hours << ":" << time.minutes << endl;
+
+    return 0;
+}
+//---------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+struct Date {
+    int hours;
+    int minutes;
+};
+
+int main() {
+    Date start, end, duration;
+    cin >> start.hours >> start.minutes;
+    cin >> end.hours >> end.minutes;
+
+    int startTotal = start.hours * 60 + start.minutes;
+    int endTotal = end.hours * 60 + end.minutes;
+    if (endTotal < startTotal) {
+        endTotal += 24 * 60;
+    }
+
+    int diff = endTotal - startTotal;
+    duration.hours = diff / 60;
+    duration.minutes = diff % 60;
+
+    cout << duration.hours << ":" << duration.minutes << endl;
+
+    return 0;
+}
