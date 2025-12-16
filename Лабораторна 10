@@ -1,0 +1,226 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[4][3];
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> a[i][j];
+        }
+    }
+    for (int i = 0; i < 4; i++) {
+        int count = 0;
+        for (int j = 0; j < 3; j++) {
+            if (a[i][j] % 2 == 0) {
+                count++;
+            }
+        }
+   
+        cout << "In line " << i + 1 << " even numbers: " << count << endl;
+    }
+
+    return 0;
+}
+//--------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[6][4];
+
+   
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+ 
+    cout << "Table:" << endl;
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << a[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    
+    for (int j = 0; j < 4; j++) {    
+        int count = 0;
+
+        for (int i = 0; i < 6; i++) { 
+            if (a[i][j] % 2 == 0) {
+                count++;
+            }
+        }
+
+        cout << "In column " << j + 1 << " even numbers: " << count << endl;
+    }
+
+    return 0;
+}
+//------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[5][7];
+
+   
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 7; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    
+    cout << "Table:" << endl;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 7; j++) {
+            cout << a[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+   
+    for (int i = 0; i < 5; i++) {
+        int sum = 0;
+
+        for (int j = 0; j < 7; j++) {
+            sum += a[i][j];  
+        }
+
+        cout << "Sum of elements in row " << i + 1 << ": " << sum << endl;
+    }
+
+    return 0;
+}
+//------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[3][4];
+
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+
+    cout << "Table:" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << a[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+
+    int max = a[0][0];  
+    int maxRow = 0;      
+    int maxCol = 0;      
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (a[i][j] > max) {
+                max = a[i][j];
+                maxRow = i;
+                maxCol = j;
+            }
+        }
+    }
+
+    // Вивід результату
+    cout << "Maximum element: " << max << endl;
+    cout << "Row number: " << maxRow + 1 << endl;
+    cout << "Column number: " << maxCol + 1 << endl;
+
+    return 0;
+}
+//----------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[4][7];
+
+    // Ввід масиву
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 7; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+
+    cout << "Table:" << endl;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 7; j++) {
+            cout << a[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+
+    int min = a[0][0];  
+    int minRow = 0;      
+    int minCol = 0;     
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 7; j++) {
+            if (a[i][j] < min) {
+                min = a[i][j];
+                minRow = i;
+                minCol = j;
+            }
+        }
+    }
+
+
+    cout << "Minimum element: " << min << endl;
+    cout << "Row number: " << minRow + 1 << endl;
+    cout << "Column number: " << minCol + 1 << endl;
+
+    return 0;
+}
+//-------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a[3][3];
+
+    // Ввід масиву
+    cout << "Enter 9 numbers for 3x3 array:" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cin >> a[i][j];
+        }
+    }
+
+    // Виведення масиву для наочності
+    cout << "Array:" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << a[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
+    int sumMain = 0;      // сума головної діагоналі
+    int sumSecondary = 0; // сума побічної діагоналі
+
+    for (int i = 0; i < 3; i++) {
+        sumMain += a[i][i];           // головна діагональ (верхній лівий → нижній правий)
+        sumSecondary += a[i][2 - i];  // побічна діагональ (верхній правий → нижній лівий)
+    }
+
+    cout << "Sum of main diagonal: " << sumMain << endl;
+    cout << "Sum of secondary diagonal: " << sumSecondary << endl;
+
+    return 0;
+}
+
