@@ -1,0 +1,47 @@
+//---------------------------------------
+//lab 13
+//---------------------------------------
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    const int N = 5;
+    int matrix[N][N];
+    srand(time(0));
+    int* ptr = &matrix[0][0];
+    for(int i = 0; i < N * N; ++i) {
+        *(ptr + i) = rand() % 100 + 1;
+    }
+
+    for(int i = 0; i < N; ++i) {
+        for(int j = 0; j < N; ++j) {
+            cout << *(*(matrix + i) + j) << "\t";
+        }
+        cout << endl;
+    }
+
+    cout << "\nMain diagonal: ";
+    for(int i = 0; i < N; ++i) {
+        cout << *(*(matrix + i) + i) << " ";
+    }
+
+    cout << "\nSide diagonal: ";
+    for(int i = 0; i < N; ++i) {
+        cout << *(*(matrix + i) + (N - 1 - i)) << " ";
+    }
+
+    int even = 0, odd = 0;
+    for(int i = 0; i < N * N; ++i) {
+        if (*(ptr + i) % 2 == 0)
+            ++even;
+        else
+            ++odd;
+    }
+
+    cout << "\nNumber of paired elements: " << even;
+    cout << "\nNumber of odd elements: " << odd << endl;
+
+    return 0;
+}
