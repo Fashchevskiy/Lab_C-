@@ -1,0 +1,27 @@
+//-------------------------------------------------------
+//LAB 18
+//-------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+void increment(int &value) {
+    value += 1;
+}
+
+void increment(int &value, int nextValue) {
+    value += nextValue;
+}
+
+int main(void) {
+    int var = 0;
+    for (int i = 0; i < 3; i++) {
+        if (i % 2)
+            increment(var);
+        else
+            increment(var, i); 
+    }
+
+    cout << var << endl;
+
+    return 0;
+}
