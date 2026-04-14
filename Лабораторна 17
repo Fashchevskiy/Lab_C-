@@ -1,0 +1,58 @@
+//----------------------------------------------------------------------------------------
+//lab 17
+//----------------------------------------------------------------------------------------
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool isPrime(int num) {
+    if (num < 2) return false; //no
+
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    if (isPrime(n))
+        cout << "The number is prime" << endl;
+    else
+        cout << "The number is not prime" << endl;
+
+    return 0;
+}
+//------------------------------------------------------------------------------------------
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool i
+sPrime(int num) {
+    if (num < 2) return false;
+
+    for (int i = 2; i <= sqrt(num); i++) {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+
+    for (int i = 0; i <= n; i++) {
+        if (isPrime(i))
+            cout << i << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
